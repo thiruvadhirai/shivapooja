@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }}</title>
+    <title>{{ site.title }}{% if page.title %} — {{ page.title }}{% endif %}</title>
     <style>
       body { font-family: serif; max-width: 800px; margin: 40px auto; padding: 0 20px; }
     </style>
