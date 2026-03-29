@@ -10,8 +10,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>{`iframe { border: none; display: block; margin: 0; }`}</style>
       </head>
-      <body style={{ fontFamily: 'sans-serif', maxWidth: 1200, margin: '0 auto', padding: '20px 16px' }}>
+      <body style={{ fontFamily: 'sans-serif', margin: 0, padding: '20px 0' }}>
         {children}
       </body>
     </html>

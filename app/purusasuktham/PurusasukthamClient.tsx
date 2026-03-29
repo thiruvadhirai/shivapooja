@@ -66,7 +66,7 @@ export default function PurusasukthamClient() {
         <Link href="/purusasuktham/telugu">Telugu</Link>
       </div>
 
-      <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap', margin: 0 }}>
         <div style={{ flexShrink: 0, width: 320 }}>
           <div ref={playerDivRef}>
             <div id="yt-player" />
