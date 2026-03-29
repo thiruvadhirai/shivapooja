@@ -20,7 +20,7 @@ export default function PurusasukthamClient() {
 
   const initPlayer = () => {
     playerRef.current = new window.YT.Player('yt-player', {
-      height: '135', width: '240',
+      height: '180', width: '320',
       videoId: '0tE7v_dwZR8',
       playerVars: { start: START, end: 2240, autoplay: 0 },
       events: {
@@ -67,7 +67,7 @@ export default function PurusasukthamClient() {
       </div>
 
       <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <div style={{ flexShrink: 0, width: 240 }}>
+        <div style={{ flexShrink: 0, width: 320 }}>
           <div ref={playerDivRef}>
             <div id="yt-player" />
           </div>
@@ -91,11 +91,19 @@ export default function PurusasukthamClient() {
           </div>
 
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '0.95em' }}>
+            <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '0.95em', tableLayout: 'fixed' }}>
               <thead>
                 <tr>
-                  {!hideSanskrit && <th style={{ textAlign: 'left', padding: '4px 10px', borderBottom: '2px solid #888' }}>Sanskrit</th>}
-                  {!hideLang2   && <th style={{ textAlign: 'left', padding: '4px 10px', borderBottom: '2px solid #888' }}>{lang2Label}</th>}
+                  {!hideSanskrit && (
+                    <th style={{ textAlign: 'left', padding: '4px 10px', borderBottom: '2px solid #888', width: hideLang2 ? '100%' : '50%' }}>
+                      Sanskrit
+                    </th>
+                  )}
+                  {!hideLang2 && (
+                    <th style={{ textAlign: 'left', padding: '4px 10px', borderBottom: '2px solid #888', width: hideSanskrit ? '100%' : '50%' }}>
+                      {lang2Label}
+                    </th>
+                  )}
                 </tr>
               </thead>
               <tbody>
