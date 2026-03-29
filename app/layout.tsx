@@ -1,4 +1,8 @@
-'use client';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: { default: 'Shiva Pooja', template: '%s | Shiva Pooja' },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,6 +1,7 @@
-'use client';
-
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = { title: 'Shiva Pooja' };
 
 export default function HomePage() {
   return (
