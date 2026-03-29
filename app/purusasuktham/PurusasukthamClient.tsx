@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { useVerseData } from './useVerseData';
+import ReactMarkdown from 'react-markdown';
 
 declare global {
   interface Window { YT: any; onYouTubeIframeAPIReady: () => void; }
@@ -109,8 +110,16 @@ export default function PurusasukthamClient() {
               <tbody>
                 {Array.from({ length: len }, (_, i) => (
                   <tr key={i}>
-                    {!hideSanskrit && <td style={{ padding: '3px 10px', verticalAlign: 'top', whiteSpace: 'pre-wrap' }}>{data.sanskrit[i] ?? ''}</td>}
-                    {!hideLang2   && <td style={{ padding: '3px 10px', verticalAlign: 'top', whiteSpace: 'pre-wrap' }}>{lang2[i] ?? ''}</td>}
+                    {!hideSanskrit && (
+                      <td style={{ padding: '3px 10px', verticalAlign: 'top' }}>
+                        <ReactMarkdown>{data.sanskrit[i] ?? ''}</ReactMarkdown>
+                      </td>
+                    )}
+                    {!hideLang2 && (
+                      <td style={{ padding: '3px 10px', verticalAlign: 'top' }}>
+                        <ReactMarkdown>{lang2[i] ?? ''}</ReactMarkdown>
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>
